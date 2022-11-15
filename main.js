@@ -1,3 +1,9 @@
+// Things to do:
+// ./lex.js: We should actively change the value everytime
+// ./types.js: Add new operators
+// ./parse.js: Improve parsing
+// ./files.js: File storage
+
 import lex from "./lex.js"
 import parse from "./parse.js"
 import { program } from "./files.js"
