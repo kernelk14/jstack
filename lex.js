@@ -38,6 +38,7 @@ export default function lex(source) {
          jstack.name = "Plus"
          jstack.code = jstackTypes.JSTACK_PLUS
          jstack.curtok = code
+         jstack.value = `${parseInt(prog[ip-2])} + ${parseInt(prog[ip-1])}`
          jstack.nextok = prog[ip+1]
          checkEOF(prog)
          if (status == "devel") {
@@ -55,6 +56,7 @@ export default function lex(source) {
       } else {
          if (isNumber(code) == true) {
             jstack.name = `Number_${code}`
+            jstack.value = parseInt(code)
             jstack.code = jstackTypes.JSTACK_PUSH
             jstack.curtok = code
             jstack.nextok = prog[ip+1]

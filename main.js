@@ -2,6 +2,7 @@
 // ./lex.js: We should actively change the value everytime
 // ./types.js: Add new operators
 // ./parse.js: Improve parsing
+//          `: Also remove the undefined
 // ./files.js: File storage
 
 import lex from "./lex.js"
