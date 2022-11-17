@@ -53,6 +53,16 @@ export default function lex(source) {
          if (status == "devel") {
             console.log(jstack)
          }
+      } else if (code == "-") {
+         jstack.name = "Minus"
+         jstack.code = jstackTypes.JSTACK_MINUS
+         jstack.curtok = code
+         jstack.nextok = prog[ip+1]
+         jstack.value = `${parseInt(prog[ip-2])} - ${parseInt(prog[ip-1])}`
+         checkEOF(prog)
+         if (status == "devel") {
+            console.log(jstack)
+         }
       } else {
          if (isNumber(code) == true) {
             jstack.name = `Number_${code}`

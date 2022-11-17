@@ -1,0 +1,23 @@
+{
+  "name": "jstack",
+  "version": "0.0.1",
+  "description": "A stack basrd language",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "test": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kernelk14/jstack.git"
+  },
+  "keywords": [
+    "programming-language"
+  ],
+  "author": "kernelk14",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kernelk14/jstack/issues"
+  },
+  "homepage": "https://github.com/kernelk14/jstack#readme"
+}
