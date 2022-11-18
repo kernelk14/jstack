@@ -29,8 +29,12 @@ export default function lex(source) {
       console.log(source)
       console.log("------------------")
    }
-   const prog = source.split(" ")
-   while (ip < prog.length) {
+   const prog = source.split(" ")   
+   if (prog.includes("\n")) {
+      console.log("I saw a newline!!!!")
+      prog.replace("\n", " ")
+   }
+   for (;ip < prog.length;) {
       const code = prog[ip]
       // REMEMBER: For Debug purposes
       // console.log(code)
@@ -53,12 +57,31 @@ export default function lex(source) {
          if (status == "devel") {
             console.log(jstack)
          }
+      } else if (code == "write\n") {
+         jstack.name = "Write"
+         jstack.code = jstackTypes.JSTACK_WRITE
+         jstack.curtok = code
+         jstack.nextok = prog[ip+1]
+         checkEOF(prog)
+         if (status == "devel") {
+            console.log(jstack)
+         }
       } else if (code == "-") {
          jstack.name = "Minus"
          jstack.code = jstackTypes.JSTACK_MINUS
          jstack.curtok = code
          jstack.nextok = prog[ip+1]
          jstack.value = `${parseInt(prog[ip-2])} - ${parseInt(prog[ip-1])}`
+         checkEOF(prog)
+         if (status == "devel") {
+            console.log(jstack)
+         }
+      } else if (code == '*'){
+         jstack.name = "Multiply"
+         jstack.code = jstackTypes.JSTACK_MULTI
+         jstack.curtok = code
+         jstack.nextok = prog[ip+1]
+         jstack.value = `${parseInt(prog[ip-2])} * ${parseInt(prog[ip-1])}`
          checkEOF(prog)
          if (status == "devel") {
             console.log(jstack)

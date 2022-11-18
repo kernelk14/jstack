@@ -19,6 +19,10 @@ export default function parse(source) {
       const b = stack.pop()
       // jstack.value = parseInt(b) - parseInt(a) // Misplaced a code here.
       stack.push(parseInt(b) - parseInt(a))
+   } else if (jstack.code == jstackTypes.JSTACK_MULTI) {
+      const a = stack.pop()
+      const b = stack.pop()
+      stack.push(parseInt(a) * parseInt(b))
    }
    // console.log(stack)
 }
