@@ -1,4 +1,4 @@
-import lex from "./lex.js"
+// import lex from "./lex.js"
 import { jstack, jstackTypes } from "./types.js"
 
 export const stack = []
