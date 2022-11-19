@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/kernelk14/jstack/issues"
   },
-  "homepage": "https://github.com/kernelk14/jstack#readme"
+  "homepage": "https://github.com/kernelk14/jstack#readme",
+  "dependencies": {
+    "jslint": "^0.12.1"
+  }
 }
