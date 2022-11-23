@@ -13,3 +13,7 @@ Clone this repo, then
 $ cd jstack
 $ deno run main.js
 ```
+
+## Little Things
+We barely have to deal with a lot of things right now.
+SEE: [main.js](./main.js)

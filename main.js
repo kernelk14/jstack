@@ -4,7 +4,8 @@
 // ./parse.js: Improve parsing
 //          `: Also remove the undefined
 // ./files.js: File storage
-//          `: Add also great cli and file parsing
+//          |-: Add also great cli and file parsing
+//          `-: Also great file handling regarding newlines
 
 import lex from "./lex.js"
 import parse from "./parse.js"
