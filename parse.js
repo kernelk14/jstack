@@ -23,6 +23,10 @@ export default function parse(source) {
       const a = stack.pop()
       const b = stack.pop()
       stack.push(parseInt(a) * parseInt(b))
+   } else if (jstack.code == jstackTypes.JSTACK_DIVIDE) {
+      const a = stack.pop()
+      const b = stack.pop()
+      stack.push(parseInt(b) / parseInt(a)) 
    }
    // console.log(stack)
 }

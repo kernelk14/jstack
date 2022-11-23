@@ -86,6 +86,16 @@ export default function lex(source) {
          if (status == "devel") {
             console.log(jstack)
          }
+      } else if (code == "/") {
+         jstack.name = "Divide"
+         jstack.code = jstackTypes.JSTACK_DIVIDE
+         jstack.curtok = code
+         jstack.nextok = prog[ip+1]
+         jstack.value = `${parseInt(prog[ip-2])} / ${parseInt(prog[ip-1])}`
+         checkEOF(prog)
+         if (status == "devel") {
+            console.log(jstack)
+         }
       } else {
          if (isNumber(code) == true) {
             jstack.name = `Number_${code}`
