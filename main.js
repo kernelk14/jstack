@@ -1,6 +1,7 @@
 // Things to do:
 // ./lex.js: We should actively change the value everytime
 // ./types.js: Add new operators
+//          `: Added `dup`
 // ./parse.js: Improve parsing
 //          `: Also remove the undefined
 // ./files.js: File storage

@@ -27,6 +27,10 @@ export default function parse(source) {
       const a = stack.pop()
       const b = stack.pop()
       stack.push(parseInt(b) / parseInt(a)) 
+   } else if (jstack.code == jstackTypes.JSTACK_DUP) {
+      const a = stack.pop()
+      stack.push(parseInt(a))
+      stack.push(parseInt(a))
    }
    // console.log(stack)
 }

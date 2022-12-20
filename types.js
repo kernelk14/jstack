@@ -8,10 +8,11 @@ export const jstackTypes = {
    JSTACK_MINUS: 3,
    JSTACK_MULTI: 4,
    JSTACK_DIVIDE: 5,
-   JSTACK_OP_COUNT: 6,
+   JSTACK_DUP   : 6
+   JSTACK_OP_COUNT: 7,
 }
 
-if (jstackTypes.JSTACK_OP_COUNT != 6) {
+if (jstackTypes.JSTACK_OP_COUNT != 7) {
    throw Error, "Oops, You have unhandled operations in the lexer."
 }
 

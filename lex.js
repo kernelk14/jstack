@@ -96,6 +96,16 @@ export default function lex(source) {
          if (status == "devel") {
             console.log(jstack)
          }
+      } else if (code == "dup") {
+         jstack.name = "Duplicate"
+         jstack.code = jstackTypes.JSTACK_DUP
+         jstack.curtok = code
+         jstack.nextok = prog[ip+1]
+         jstack.value = `${parseInt(prog[ip+1])} -> ${parseInt(prog[ip+1])}`
+         checkEOF(prog)
+         if (status == "devel") {
+            console.log(jstack)
+         }
       } else {
          if (isNumber(code) == true) {
             jstack.name = `Number_${code}`
