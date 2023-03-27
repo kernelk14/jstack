@@ -106,6 +106,16 @@ export default function lex(source) {
          if (status == "devel") {
             console.log(jstack)
          }
+      } else if (code == "dbgln") {
+         jstack.name = "Debug Line"
+         jstack.code = jstackTypes.JSTACK_DEBUG
+         jstack.curtok = code
+         jstack.nextok = prog[ip+1]
+         jstack.value = `Debugging start:`
+         checkEOF(prog)
+         if (status == "devel") {
+            console.log(jstack)
+         }
       } else {
          if (isNumber(code) == true) {
             jstack.name = `Number_${code}`
